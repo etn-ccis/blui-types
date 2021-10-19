@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  gh: circleci/github-cli@1.0.3
 jobs:
   build:
     docker:
@@ -28,18 +30,23 @@ jobs:
           at: .
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+            echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
-          name: Publish @pxblue/types
+          name: Publish @brightlayer-ui/types
           command:  |
-            MASTER_VERSION=`node -p "require('./package.json').version"`
-            NPM_LATEST_VERSION=`npm show @pxblue/types version`
-            if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-            then
-                npm publish
-            else
-                echo "Latest version is already published."
-            fi
+            yarn publish:package -b $CIRCLE_BRANCH
+  tag:
+    docker:
+      - image: circleci/node:12.9.1-browsers
+    steps:
+      - checkout
+      - gh/setup
+      - run:
+          name: Tag @brightlayer-ui/types
+          command: |
+            yarn tag:package -b $CIRCLE_BRANCH -s -blui-types
 
 workflows:
   version: 2
@@ -49,6 +56,14 @@ workflows:
       - publish:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master
+                - dev
+      - tag:
+          requires:
+            - publish
           filters:
             branches:
               only:

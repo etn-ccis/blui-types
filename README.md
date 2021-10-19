@@ -1,14 +1,14 @@
-# PX Blue Types
+# Brightlayer UI Types
 
 ## Installation
 ```
-yarn add --dev @pxblue/types
+yarn add --dev @brightlayer-ui/types
 ```
 
 ## Summary
-This package contains type definitions shared across other PX Blue packages. Most PX Blue packages are written in TypeScript and export their own types, but this package contains ones that are shared to avoid code duplication.
+This package contains type definitions shared across other Brightlayer UI packages. Most Brightlayer UI packages are written in TypeScript and export their own types, but this package contains ones that are shared to avoid code duplication.
 
 The following types are exposed:
-- `PXBlueColor`
+- `BLUIColor`
 
-This package can be viewed on NPM as [@pxblue/types](https://www.npmjs.com/package/@pxblue/types)
+This package can be viewed on NPM as [@brightlayer-ui/types](https://www.npmjs.com/package/@brightlayer-ui/types)
