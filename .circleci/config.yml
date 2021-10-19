@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Tag @brightlayer-ui/types
           command: |
-            yarn tag:package -b $CIRCLE_BRANCH
+            yarn tag:package -b $CIRCLE_BRANCH -s -blui-types
 
 workflows:
   version: 2
