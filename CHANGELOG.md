@@ -1,4 +1,4 @@
-## v2.0.0 (Not yet published)
+## v2.0.0 (October 19, 2021)
 
 ### Changed
 
