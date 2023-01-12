@@ -1,5 +1,7 @@
 # Brightlayer UI Types
 
+[![](https://img.shields.io/npm/v/@brightlayer-ui/types.svg?label=@brightlayer-ui/types&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/types)
+
 ## Installation
 ```
 yarn add --dev @brightlayer-ui/types
