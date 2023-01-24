@@ -28,7 +28,7 @@
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "prettier": "^2.2.1",
-        "typescript": "^3.7.2"
+        "typescript": "^4.9.4"
     },
     "files": [
         "package.json",
