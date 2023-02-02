@@ -8,7 +8,8 @@
         "test": "./buildTest.sh",
         "build": "rm -rf dist && tsc",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-        "tag:package": "npx -p @brightlayer-ui/tag blui-tag"
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag",
+        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write"
     },
     "repository": {
         "type": "git",
@@ -27,7 +28,7 @@
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "prettier": "^2.2.1",
+        "prettier": "^2.8.3",
         "typescript": "^4.9.4"
     },
     "files": [
