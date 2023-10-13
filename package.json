@@ -8,11 +8,12 @@
         "test": "./buildTest.sh",
         "build": "rm -rf dist && tsc",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-        "tag:package": "npx -p @brightlayer-ui/tag blui-tag"
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag",
+        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/brightlayer-ui/types.git"
+        "url": "git+https://github.com/etn-ccis/blui-types.git"
     },
     "keywords": [
         "BLUI",
@@ -21,14 +22,14 @@
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/types/issues"
+        "url": "https://github.com/etn-ccis/blui-types/issues"
     },
-    "homepage": "https://github.com/brightlayer-ui/types#readme",
+    "homepage": "https://github.com/etn-ccis/blui-types#readme",
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "prettier": "^2.2.1",
-        "typescript": "^3.7.2"
+        "prettier": "^3.0.0",
+        "typescript": "^5.1.6"
     },
     "files": [
         "package.json",
